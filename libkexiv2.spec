@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : libkexiv2
-Version  : 19.08.2
-Release  : 12
-URL      : https://download.kde.org/stable/applications/19.08.2/src/libkexiv2-19.08.2.tar.xz
-Source0  : https://download.kde.org/stable/applications/19.08.2/src/libkexiv2-19.08.2.tar.xz
-Source1 : https://download.kde.org/stable/applications/19.08.2/src/libkexiv2-19.08.2.tar.xz.sig
+Version  : 19.08.3
+Release  : 13
+URL      : https://download.kde.org/stable/applications/19.08.3/src/libkexiv2-19.08.3.tar.xz
+Source0  : https://download.kde.org/stable/applications/19.08.3/src/libkexiv2-19.08.3.tar.xz
+Source1 : https://download.kde.org/stable/applications/19.08.3/src/libkexiv2-19.08.3.tar.xz.sig
 Summary  : A library to manipulate pictures metadata
 Group    : Development/Tools
 License  : BSD-3-Clause GPL-2.0
@@ -54,14 +54,14 @@ license components for the libkexiv2 package.
 
 
 %prep
-%setup -q -n libkexiv2-19.08.2
+%setup -q -n libkexiv2-19.08.3
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1570774463
+export SOURCE_DATE_EPOCH=1573190164
 mkdir -p clr-build
 pushd clr-build
 # -Werror is for werrorists
@@ -78,12 +78,12 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1570774463
+export SOURCE_DATE_EPOCH=1573190164
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libkexiv2
-cp COPYING %{buildroot}/usr/share/package-licenses/libkexiv2/COPYING
-cp COPYING-CMAKE-SCRIPTS %{buildroot}/usr/share/package-licenses/libkexiv2/COPYING-CMAKE-SCRIPTS
-cp COPYING.LIB %{buildroot}/usr/share/package-licenses/libkexiv2/COPYING.LIB
+cp %{_builddir}/libkexiv2-19.08.3/COPYING %{buildroot}/usr/share/package-licenses/libkexiv2/133efad5329acf364135c569ac01ec084c3d4647
+cp %{_builddir}/libkexiv2-19.08.3/COPYING-CMAKE-SCRIPTS %{buildroot}/usr/share/package-licenses/libkexiv2/ff3ed70db4739b3c6747c7f624fe2bad70802987
+cp %{_builddir}/libkexiv2-19.08.3/COPYING.LIB %{buildroot}/usr/share/package-licenses/libkexiv2/c08668a6ace9b36ba46940609040748161b03a37
 pushd clr-build
 %make_install
 popd
@@ -116,6 +116,6 @@ popd
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/libkexiv2/COPYING
-/usr/share/package-licenses/libkexiv2/COPYING-CMAKE-SCRIPTS
-/usr/share/package-licenses/libkexiv2/COPYING.LIB
+/usr/share/package-licenses/libkexiv2/133efad5329acf364135c569ac01ec084c3d4647
+/usr/share/package-licenses/libkexiv2/c08668a6ace9b36ba46940609040748161b03a37
+/usr/share/package-licenses/libkexiv2/ff3ed70db4739b3c6747c7f624fe2bad70802987
