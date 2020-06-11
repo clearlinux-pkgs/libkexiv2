@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : libkexiv2
-Version  : 20.04.1
-Release  : 19
-URL      : https://download.kde.org/stable/release-service/20.04.1/src/libkexiv2-20.04.1.tar.xz
-Source0  : https://download.kde.org/stable/release-service/20.04.1/src/libkexiv2-20.04.1.tar.xz
-Source1  : https://download.kde.org/stable/release-service/20.04.1/src/libkexiv2-20.04.1.tar.xz.sig
+Version  : 20.04.2
+Release  : 20
+URL      : https://download.kde.org/stable/release-service/20.04.2/src/libkexiv2-20.04.2.tar.xz
+Source0  : https://download.kde.org/stable/release-service/20.04.2/src/libkexiv2-20.04.2.tar.xz
+Source1  : https://download.kde.org/stable/release-service/20.04.2/src/libkexiv2-20.04.2.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause GPL-2.0
@@ -54,15 +54,15 @@ license components for the libkexiv2 package.
 
 
 %prep
-%setup -q -n libkexiv2-20.04.1
-cd %{_builddir}/libkexiv2-20.04.1
+%setup -q -n libkexiv2-20.04.2
+cd %{_builddir}/libkexiv2-20.04.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1589835111
+export SOURCE_DATE_EPOCH=1591891059
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -78,12 +78,12 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1589835111
+export SOURCE_DATE_EPOCH=1591891059
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libkexiv2
-cp %{_builddir}/libkexiv2-20.04.1/COPYING %{buildroot}/usr/share/package-licenses/libkexiv2/133efad5329acf364135c569ac01ec084c3d4647
-cp %{_builddir}/libkexiv2-20.04.1/COPYING-CMAKE-SCRIPTS %{buildroot}/usr/share/package-licenses/libkexiv2/ff3ed70db4739b3c6747c7f624fe2bad70802987
-cp %{_builddir}/libkexiv2-20.04.1/COPYING.LIB %{buildroot}/usr/share/package-licenses/libkexiv2/c08668a6ace9b36ba46940609040748161b03a37
+cp %{_builddir}/libkexiv2-20.04.2/COPYING %{buildroot}/usr/share/package-licenses/libkexiv2/133efad5329acf364135c569ac01ec084c3d4647
+cp %{_builddir}/libkexiv2-20.04.2/COPYING-CMAKE-SCRIPTS %{buildroot}/usr/share/package-licenses/libkexiv2/ff3ed70db4739b3c6747c7f624fe2bad70802987
+cp %{_builddir}/libkexiv2-20.04.2/COPYING.LIB %{buildroot}/usr/share/package-licenses/libkexiv2/c08668a6ace9b36ba46940609040748161b03a37
 pushd clr-build
 %make_install
 popd
