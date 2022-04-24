@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xBB463350D6EF31EF (heiko@shruuf.de)
 #
 Name     : libkexiv2
-Version  : 21.12.3
-Release  : 37
-URL      : https://download.kde.org/stable/release-service/21.12.3/src/libkexiv2-21.12.3.tar.xz
-Source0  : https://download.kde.org/stable/release-service/21.12.3/src/libkexiv2-21.12.3.tar.xz
-Source1  : https://download.kde.org/stable/release-service/21.12.3/src/libkexiv2-21.12.3.tar.xz.sig
+Version  : 22.04.0
+Release  : 38
+URL      : https://download.kde.org/stable/release-service/22.04.0/src/libkexiv2-22.04.0.tar.xz
+Source0  : https://download.kde.org/stable/release-service/22.04.0/src/libkexiv2-22.04.0.tar.xz
+Source1  : https://download.kde.org/stable/release-service/22.04.0/src/libkexiv2-22.04.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause GPL-2.0
@@ -18,8 +18,8 @@ Requires: libkexiv2-lib = %{version}-%{release}
 Requires: libkexiv2-license = %{version}-%{release}
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
+BuildRequires : exiv2-dev
 BuildRequires : extra-cmake-modules-data
-BuildRequires : pkgconfig(exiv2)
 
 %description
 EXIV2 Library interface for KDE
@@ -64,15 +64,15 @@ license components for the libkexiv2 package.
 
 
 %prep
-%setup -q -n libkexiv2-21.12.3
-cd %{_builddir}/libkexiv2-21.12.3
+%setup -q -n libkexiv2-22.04.0
+cd %{_builddir}/libkexiv2-22.04.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1646520799
+export SOURCE_DATE_EPOCH=1650804181
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -88,11 +88,11 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1646520799
+export SOURCE_DATE_EPOCH=1650804181
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libkexiv2
-cp %{_builddir}/libkexiv2-21.12.3/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/libkexiv2/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c
-cp %{_builddir}/libkexiv2-21.12.3/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/libkexiv2/3e8971c6c5f16674958913a94a36b1ea7a00ac46
+cp %{_builddir}/libkexiv2-22.04.0/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/libkexiv2/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c
+cp %{_builddir}/libkexiv2-22.04.0/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/libkexiv2/3e8971c6c5f16674958913a94a36b1ea7a00ac46
 pushd clr-build
 %make_install
 popd
