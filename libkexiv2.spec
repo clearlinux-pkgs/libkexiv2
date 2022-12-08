@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xBB463350D6EF31EF (heiko@shruuf.de)
 #
 Name     : libkexiv2
-Version  : 22.08.3
-Release  : 45
-URL      : https://download.kde.org/stable/release-service/22.08.3/src/libkexiv2-22.08.3.tar.xz
-Source0  : https://download.kde.org/stable/release-service/22.08.3/src/libkexiv2-22.08.3.tar.xz
-Source1  : https://download.kde.org/stable/release-service/22.08.3/src/libkexiv2-22.08.3.tar.xz.sig
+Version  : 22.12.0
+Release  : 46
+URL      : https://download.kde.org/stable/release-service/22.12.0/src/libkexiv2-22.12.0.tar.xz
+Source0  : https://download.kde.org/stable/release-service/22.12.0/src/libkexiv2-22.12.0.tar.xz
+Source1  : https://download.kde.org/stable/release-service/22.12.0/src/libkexiv2-22.12.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause GPL-2.0
@@ -65,15 +65,15 @@ license components for the libkexiv2 package.
 
 
 %prep
-%setup -q -n libkexiv2-22.08.3
-cd %{_builddir}/libkexiv2-22.08.3
+%setup -q -n libkexiv2-22.12.0
+cd %{_builddir}/libkexiv2-22.12.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1667857357
+export SOURCE_DATE_EPOCH=1670512826
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -89,7 +89,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1667857357
+export SOURCE_DATE_EPOCH=1670512826
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libkexiv2
 cp %{_builddir}/libkexiv2-%{version}/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/libkexiv2/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c || :
