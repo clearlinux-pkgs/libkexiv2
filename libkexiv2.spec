@@ -9,7 +9,7 @@
 #
 Name     : libkexiv2
 Version  : 24.08.0
-Release  : 73
+Release  : 74
 URL      : https://download.kde.org/stable/release-service/24.08.0/src/libkexiv2-24.08.0.tar.xz
 Source0  : https://download.kde.org/stable/release-service/24.08.0/src/libkexiv2-24.08.0.tar.xz
 Source1  : https://download.kde.org/stable/release-service/24.08.0/src/libkexiv2-24.08.0.tar.xz.sig
